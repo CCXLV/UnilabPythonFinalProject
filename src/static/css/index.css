@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+:root {
+    --main-color: #800020;
+    --secondary-color: #4682B4;
+}
+body {
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+    color: aliceblue;
+}
+hr {
+    margin: 0px;
+    width: 100%;
+    border: 1px solid gray;
+}
+textarea {
+    resize: none;
+}
+
+.flex-d {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Nav Bar */
+.nav-bar {
+    height: 38px;
+    width: calc(100% - 12px);
+    background-color: var(--main-color);
+    padding: 6px;
+}
+.container {
+    display: flex;
+    height: 100%;
+    width: 70%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+.tag-div {
+    width: 100px;
+    height: 100%;
+    color: aliceblue;
+    font-size: 26px;
+    font-family: 'Poppins', sans-serif;
+}
+.buttons-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: 100%;
+    margin-left: auto;
+    gap: 10px;
+}
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif; 
+    background-color: transparent;
+    border: 2px solid var(--secondary-color);
+    padding: 2px;
+    width: 65px;
+    font-size: 14px;
+    border-radius: 16px;
+}
+.button:hover {
+    background-color: #930629;
+}
+.button:active {
+    background-color: #a50a31;
+}
+
+.inner-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--main-color);
+    border: 1px solid var(--secondary-color);
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    padding: 1px 8px 1px 8px;
+    border-radius: 16px;
+}
+.inner-button:hover {
+    background-color: #930629;
+}
+.inner-button:active {
+    background-color: #a50a31;
+}
+
+.input {
+    border-radius: 6px;
+    border: 1px solid var(--main-color);
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    padding: 4px;
+    text-align: left;
+}
+.textarea {
+    height: 200px;
+}
+
+
+@media (max-width: 750px) {
+    .container {
+        width: 85%;
+    }
+}
+@media (max-width: 600px) {
+    .container {
+        width: 90%;
+    }
+}

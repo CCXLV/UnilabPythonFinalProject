@@ -1,0 +1,31 @@
+{% extends 'layouts/layout.html' %}
+
+{% block head %}
+
+    <link rel="stylesheet" href="{{ url_for('static.serve_static', filename='css/main/home.css') }}">
+    <title>Home</title>
+
+{% endblock %}
+
+{% block body %}
+
+    <div class="container flex-d">
+        <div class="main-div">
+            <div class="create-post-div">
+                <a href="/posts" class="inner-button">Posts</a>
+                <a href="/post" class="inner-button">Create post</a>
+            </div>
+            <hr>
+            <div class="posts-div">
+                {% for post in posts %}
+                    <div class="post">
+                        <div class="post-header">{{ post.title }}</div>
+                        <div class="post-content">{{ post.content }}</div>
+                        <div class="post-bottom">{{ post.author }} - {{ post.date.strftime('%Y %d %B %H:%M') }}</div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

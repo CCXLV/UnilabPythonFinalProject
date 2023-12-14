@@ -1,0 +1,26 @@
+{% extends 'layouts/layout.html' %}
+
+{% block head %}
+
+    <link rel="stylesheet" href="{{ url_for('static.serve_static', filename='css/auth/log-reg.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static.serve_static', filename='css/index.css') }}">
+    <title>Post</title>
+
+{% endblock %}
+
+{% block body %}
+
+    <div class="container flex-d">
+        <div class="log-reg-div flex-d">
+            <form method="post">
+                {{ form.hidden_tag() }}
+                <label for="title-input">Title</label>
+                {{ form.title(class='input', id='title-input', placeholder=form.title.label.text)}}
+                <label for="content-input">Content</label>
+                {{ form.content(class='textarea input', id='content-input', placeholder=form.content.label.text)}}
+                {{ form.submit(class='log-reg-button')}}
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

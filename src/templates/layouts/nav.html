@@ -1,0 +1,16 @@
+
+<nav class="nav-bar flex-d">
+    <div class="container">
+        <div class="tag-div flex-d">
+            <a href="/">It</a>
+        </div>
+        <div class="buttons-div">
+            {% if current_user.is_authenticated %}
+                <a href="{{ url_for('auth.logout') }}" class="button">Log out</a>
+            {% else %}
+                <a href="{{ url_for('auth.login') }}" class="button">Log in</a>
+                <a href="{{ url_for('auth.register') }}" class="button">Sign up</a>
+            {% endif %}
+        </div>
+    </div>
+</nav>

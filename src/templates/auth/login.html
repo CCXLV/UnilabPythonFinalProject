@@ -1,0 +1,25 @@
+{% extends 'layouts/layout.html' %}
+
+{% block head %}
+
+    <link rel="stylesheet" href="{{ url_for('static.serve_static', filename='css/auth/log-reg.css') }}">
+    <title>Login</title>
+
+{% endblock %}
+
+{% block body %}
+
+    <div class="container flex-d">
+        <div class="log-reg-div flex-d">
+            <form method="post">
+                {{ form.hidden_tag() }}
+                <label for="email-input">Email</label>
+                {{ form.email(class='input', id='email-input', placeholder=form.email.label.text)}}
+                <label for="password-input">Password</label>
+                {{ form.password(class='input', id='password-input', placeholder=form.password.label.text)}}
+                {{ form.submit(class='log-reg-button')}}
+            </form>
+        </div>
+    </div>
+
+{% endblock %}
