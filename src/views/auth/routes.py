@@ -32,10 +32,14 @@ def login():
 def register():
     form = RegisterForm()
     if form.validate_on_submit():
-        user = User(user_id=str(uuid.uuid4())[:8], username=form.username.data, email=form.email.data, password=form.password.data, role_id=1)
-        user.create()
+        already_registered_email = User.query.filter_by(email=form.email.data).first()
+        if not already_registered_email:
+            user = User(user_id=str(uuid.uuid4())[:8], username=form.username.data, email=form.email.data, password=form.password.data, role_id=1)
+            user.create()
 
-        return redirect(url_for('auth.login'))
+            return redirect(url_for('auth.login'))
+        else:
+            return redirect(url_for('auth.register`'))
 
     return render_template('auth/register.html', form=form)
 
