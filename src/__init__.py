@@ -45,9 +45,8 @@ def register_extension(app):
         return User.query.get(user_id)  
     
     admin.init_app(app)
-    admin.add_view(PostView(Post, db.session, endpoint='post_view'))
+    admin.add_view(PostView(Post, db.session))
     admin.add_view(UserView(User, db.session))
-    admin.add_view(SecureModelView(Post, db.session))
 
 
 def register_blueprints(app):

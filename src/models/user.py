@@ -13,8 +13,8 @@ class User(BaseModel, UserMixin):
     email = db.Column(db.String)
     _password = db.Column(db.String)
 
-    role_id = db.Column(db.ForeignKey('roles.id'))
-    role = db.relationship('Role', uselist=False)
+    role_id = db.Column(db.Integer, db.ForeignKey('roles.id'))
+    role = db.relationship('Role', backref="user")
 
 
     @property
